@@ -1,0 +1,27 @@
+<div class="grid" id="login-container">
+    <div class="sm:hidden md:block md:col-9" id="imagen"></div>
+    <div class="sm:col-12 md:col-3 flex align-items-center px-5">
+        <div class="form-container">
+            <h3 class="flex align-items-center justify-content-center">
+                Iniciar Sesión 
+                <img src="../../assets/escudo.png" alt="" id="escudo">
+            </h3>
+            <p-divider></p-divider>
+            <form (ngSubmit)="login()">
+                <div class="grid p-fluid flex justify-content-center">
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                        <input type="email" pInputText placeholder="Usuario" [(ngModel)]="loginData.usuario" [ngModelOptions]="{standalone: true}">
+                    </div>
+                    <div class="p-inputgroup mt-3">
+                        <span class="p-inputgroup-addon"><i class="pi pi-key"></i></span>
+                        <input type="password" pInputText placeholder="Contraseña" [(ngModel)]="loginData.password" [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+                <div class="flex justify-content-center mt-4">
+                    <button type="submit" pButton class="p-button-sm">Ingresar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

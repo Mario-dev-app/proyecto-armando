@@ -5,20 +5,32 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { SharedModule } from './shared/shared.module';
 import { PagesModule } from './pages/pages.module';
+import { LoginComponent } from './login/login.component';
+
+//PrimeNG for LoginComponent
+import {DividerModule} from 'primeng/divider';
+import {InputTextModule} from 'primeng/inputtext';
+import {PasswordModule} from 'primeng/password';
+import { FormsModule } from '@angular/forms';
+import {ButtonModule} from 'primeng/button';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    SharedModule,
-    PagesModule
+    PagesModule,
+    DividerModule,
+    InputTextModule,
+    PasswordModule,
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

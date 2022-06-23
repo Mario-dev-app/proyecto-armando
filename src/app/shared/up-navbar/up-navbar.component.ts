@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 
 @Component({
@@ -8,7 +9,7 @@ import { MenuItem } from 'primeng/api';
 })
 export class UpNavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   profileItems: MenuItem[] = [];
   addItems: MenuItem[] = [];
@@ -43,7 +44,7 @@ export class UpNavbarComponent implements OnInit {
   }
 
   cerrarSesion() {
-    console.log('Cerrando sesión...')
+    this.router.navigateByUrl('/login');
   }
 
 }

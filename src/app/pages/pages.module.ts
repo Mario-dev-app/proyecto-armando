@@ -1,24 +1,32 @@
+import { SharedModule } from './../shared/shared.module';
+import { PagesRoutingModule } from './pages-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { TicketsComponent } from './tickets/tickets.component';
-import { AdministracionComponent } from './administracion/administracion.component';
 import { PrimeNgModule } from '../prime-ng/prime-ng.module';
+import { InicioComponent } from './inicio/inicio.component';
+import { PersonaComponent } from './persona/persona.component';
+import { ArticuloComponent } from './articulo/articulo.component';
+import { CursoComponent } from './curso/curso.component';
+import { PagesComponent } from './pages.component';
 
 
 
 @NgModule({
   declarations: [
-    DashboardComponent,
-    TicketsComponent,
-    AdministracionComponent
+    InicioComponent,
+    PersonaComponent,
+    ArticuloComponent,
+    CursoComponent,
+    PagesComponent
   ],
   imports: [
     CommonModule,
-    PrimeNgModule
+    PrimeNgModule,
+    PagesRoutingModule,
+    SharedModule
   ],
   exports: [
-    DashboardComponent
+    PagesComponent
   ]
 })
 export class PagesModule { }

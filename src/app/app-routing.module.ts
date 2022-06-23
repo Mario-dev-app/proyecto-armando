@@ -1,31 +1,24 @@
+import { AuthGuard } from './services/auth.guard';
+import { LoginComponent } from './login/login.component';
+import { PagesComponent } from './pages/pages.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { TicketsComponent } from './pages/tickets/tickets.component';
-import { AdministracionComponent } from './pages/administracion/administracion.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'dashboard',
-    pathMatch: 'full'
+    component: PagesComponent,
+    canActivate: [AuthGuard],
+    loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule)
   },
   {
-    path: 'dashboard',
-    component: DashboardComponent
-  },
-  {
-    path: 'tickets',
-    component: TicketsComponent
-  },
-  {
-    path: 'administracion',
-    component: AdministracionComponent
+    path: 'login',
+    component: LoginComponent
   },
   {
     path: '**',
-    redirectTo: 'dashboard',
-    pathMatch: 'full'
+    pathMatch: 'full',
+    redirectTo: '/'
   }
 ];
 

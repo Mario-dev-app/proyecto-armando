@@ -1,0 +1,11 @@
+#imagen{
+    background-image: url('../../assets/school-classroom.jpg');
+    background-size: cover;
+}
+#escudo{
+    width: 4rem;
+    height: 4rem;
+}
+#login-container{
+    height: 100vh;
+}
